@@ -2,26 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.mobile__view_only {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.ai__grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 6fr;
+  grid-template-areas: "menuTray chat";
+  gap: 1.25rem;
+}
+
+#menuSection {
+  grid-area: menuTray;
+}
+#chatSection {
+  grid-area: chat;
+}
+
+.highlight__element_anim {
+  animation: element-scale-anim 0.5s infinite ease-in-out;
+}
+
+@keyframes element-scale-anim {
+  0% {
+    scale: 1;
+  }
+  25% {
+    scale: 1.0125;
+  }
+  50% {
+    scale: 1.025;
+  }
+  75% {
+    scale: 1.0125
+  }
+  100% {
+    scale: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen and (max-width: 768px) {
+  .mobile__view_only {
+    display: block;
+  }
+  .desktop__view_only {
+    display: none;
+  }
+
+  .ai__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #menuSection {
+    display: none;
+  }
 }
+
