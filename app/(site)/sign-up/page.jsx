@@ -52,7 +52,7 @@ export default function Register() {
         <div>
           <Link href={"/"}>
             <p className="text-lg">
-              KXKDA | <span className="text-neutral-400 text-sm">chat</span>
+              KXKDA {" "}<span className="text-neutral-400 text-sm">chat</span>
             </p>
           </Link>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import axios from "axios";
@@ -9,6 +9,7 @@ import Transition from "@/components/utils/Transition";
 
 export default function savedChatPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const uniqueChatId = searchParams.get("cid");
 
@@ -35,13 +36,42 @@ export default function savedChatPage() {
 
     console.log("Set Unique Chat State to: ", uniqueChat);
 
+    const deleteChat = async () => {
+      try {
+        const response = await axios.post("/api/deleteSpecificChat", {
+          uniqueChatId: uniqueChatId,
+        });
+        console.log("Deleted Chat API response", response);
+        router.push("/ai?chatDeleted=true");
+      } catch (error) {
+        console.error("An error occurred while fetching the chats", error);
+      }
+    };
+
     return (
       <>
+      <section className="fixed bottom-0 lg:right-10 lg:left-10 right-5 left-5 z-10 flex items-center justify-center">
+              <div
+                id="chatSection"
+                className="bg-transparent lg:p-4 p-2 rounded-lg"
+              >
+                <div className="items-center gap-2 lg:flex justify-center">
+                  <div className="flex items-center gap-2 mb-2 lg:mb-0">
+                    <button
+                      onClick={deleteChat}
+                      className="border dark:border-neutral-700 border-neutral-300 bg-neutral-100 dark:text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-800 text-center"
+                    >
+                      Delete Chat
+                    </button>
+                  </div>
+                </div>
+              </div>
+      </section>
         <nav className="border__bottom border-neutral-900 flex items-center justify-between px-[2.5%] lg:py-[.5%] py-2">
           <div>
             <Link href={"/"}>
               <p className="text-lg">
-                KXKDA |{" "}
+                KXKDA{" "}
                 <span className="dark:text-neutral-400 text-neutral-600 text-sm">
                   chat
                 </span>
@@ -65,24 +95,25 @@ export default function savedChatPage() {
           <main className="px-[2.5%] py-1 min-h-[92.5vh]">
             <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div>
             <section className="mt-4">
-            {uniqueChat.map((m) => (
-              <div key={m.id}>
-                {m.role === "user" ? (
-                  <div className="dark:bg-neutral-900 bg-neutral-100 py-2 px-4 rounded-lg flex items-start gap-5 mb-2">
-                    <p className="min-w-[5%]">User:</p>
-                    <p>{m.content}</p>
-                  </div>
-                ) : (
-                  <div className="py-2 px-4 lg:flex lg:gap-5 items-start mb-2">
-                    <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
-                    <p className="dark:text-neutral-400 text-neutral-600">
-                      {m.content}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+              {uniqueChat.map((m) => (
+                <div key={m.id}>
+                  {m.role === "user" ? (
+                    <div className="dark:bg-neutral-900 bg-neutral-100 py-2 px-4 rounded-lg lg:flex items-start gap-5 mb-2">
+                      <p className="min-w-[5%] lg:mb-0 mb-2">User:</p>
+                      <p>{m.content}</p>
+                    </div>
+                  ) : (
+                    <div className="py-2 px-4 lg:flex lg:gap-5 items-start mb-2">
+                      <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
+                      <p className="dark:text-neutral-400 text-neutral-600">
+                        {m.content}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </section>
+            
           </main>
         </Transition>
       </>

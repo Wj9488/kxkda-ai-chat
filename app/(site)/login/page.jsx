@@ -65,7 +65,7 @@ export default function Login() {
         <div>
           <Link href={"/"}>
             <p className="text-lg">
-              KXKDA |{" "}
+              KXKDA {" "}
               <span className="dark:text-neutral-400 text-neutral-600 text-sm">
                 chat
               </span>
