@@ -131,7 +131,7 @@ export default function Login() {
               </div>
               <button
                 onClick={() => signIn("google")}
-                className={withGoogleOnboarding === true ? "highlight__element_anim bg-red-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center" : "bg-green-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center"}
+                className={withGoogleOnboarding === true ? "highlight__element_anim bg-neutral-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center" : "bg-neutral-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center"}
               >
                 Google Sign In
               </button>

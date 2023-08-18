@@ -87,14 +87,14 @@ export default function savedChatPage() {
             )}
             <p className="lg:block hidden">|</p>
             <Link href={"/ai"}>
-              <button className="text-sm">AI CHAT</button>
+              <button className="text-sm">BACK</button>
             </Link>
           </div>
         </nav>
         <Transition>
           <main className="px-[2.5%] py-1 min-h-[92.5vh]">
             <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div>
-            <section className="mt-4">
+            <section className="mt-4 lg:mb-10 mb-[5rem]">
               {uniqueChat.map((m) => (
                 <div key={m.id}>
                   {m.role === "user" ? (

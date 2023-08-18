@@ -140,7 +140,7 @@ const Ai = () => {
                     value={input}
                     onChange={handleInputChange}
                     placeholder="Write a message"
-                    className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-200 z-10"
+                    className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-100 z-10"
                   />
                   <button
                     className="border dark:border-neutral-200 border-neutral-900 bg-neutral-900 text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] w-full lg:w-auto text-center"
@@ -185,7 +185,7 @@ const Ai = () => {
       <Transition>
         <main className="px-[2.5%] py-1 min-h-[92.5vh]">
           <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div>
-          <section className="mt-4">
+          <section className="mt-4 lg:mb-10 mb-[10rem]">
             {messages.map((m) => (
               <div key={m.id}>
                 {m.role === "user" ? (
