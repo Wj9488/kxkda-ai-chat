@@ -74,14 +74,14 @@ export default function Login() {
         </div>
         <div className="flex items-center justify-around gap-5">
           <Link href={"/sign-up"}>
-            <button className="transition-all text-sm">SIGN UP</button>
+            <button className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">Sign Up</button>
           </Link>
         </div>
       </nav>
       <Transition>
         <main className="min-h-[80dvh] flex items-center justify-center">
           <section className="lg:py-10 lg:px-20 rounded-xl lg:min-w-[33.33%] min-w-[90%]">
-            <p className="text-2xl text-center py-4">Welcome Back</p>
+            <p className="text-3xl text-center py-4">Welcome Back</p>
             <div className="px-4 pb-4">
               <form method="POST" onSubmit={loginUser} className="">
                 <p className="text-sm mb-2">Email</p>
@@ -93,7 +93,7 @@ export default function Login() {
                     }
                     type="email"
                     placeholder="email@example.com"
-                    className="dark:bg-transparent px-2 py-1 rounded-lg border border-neutral-900 mb-2 dark:border-neutral-200 w-full"
+                    className="dark:bg-transparent p-2 rounded-2xl border border-neutral-900 mb-2 dark:border-neutral-200 w-full"
                   />
                 </div>
                 <div className="flex items-center justify-between mb-2">
@@ -110,7 +110,7 @@ export default function Login() {
                   <input
                     type={passwordInputType}
                     placeholder="password"
-                    className="dark:bg-transparent px-2 py-1 rounded-lg  border border-neutral-900 dark:border-neutral-200 w-full"
+                    className="dark:bg-transparent p-2 rounded-2xl  border border-neutral-900 dark:border-neutral-200 w-full"
                     value={data.password}
                     onChange={(e) =>
                       setData({ ...data, password: e.target.value })
@@ -119,7 +119,7 @@ export default function Login() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-neutral-900 text-white mt-4 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] w-full text-center"
+                  className="bg-[#02ffb3] mt-4 px-2 py-2 rounded-2xl text-[#070707] w-full text-center"
                 >
                   Login
                 </button>
@@ -131,7 +131,7 @@ export default function Login() {
               </div>
               <button
                 onClick={() => signIn("google")}
-                className={withGoogleOnboarding === true ? "highlight__element_anim bg-neutral-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center" : "bg-neutral-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center"}
+                className={withGoogleOnboarding === true ? "highlight__element_anim bg-neutral-900 text-white mt-2 px-2 py-1 rounded-2xl dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center" : "bg-neutral-900 text-white mt-2 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center"}
               >
                 Google Sign In
               </button>

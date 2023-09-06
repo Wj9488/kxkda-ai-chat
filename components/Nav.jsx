@@ -28,14 +28,14 @@ const Nav = () => {
       </div>
       <div className="flex items-center justify-around gap-5">
         <Link href={"/sign-up"}>
-        <button className="transition-all text-sm">
-          SIGN UP
+        <button className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">
+          Sign Up
         </button>
         </Link>
         <p>|</p>
         <Link href={"/login"}>
-        <button className="transition-all text-sm">
-          LOGIN
+        <button className="text-sm text-[#070707] py-1 px-2 bg-[#02ffb3] rounded-lg">
+          Login
         </button>
         </Link>
         {/* <div

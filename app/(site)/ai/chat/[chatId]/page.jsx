@@ -59,7 +59,7 @@ export default function savedChatPage() {
                   <div className="flex items-center gap-2 mb-2 lg:mb-0">
                     <button
                       onClick={deleteChat}
-                      className="border dark:border-neutral-700 border-neutral-300 bg-neutral-100 dark:text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-800 text-center"
+                      className="bg-[#02ffb3] text-[#070707] mt-0 px-2 py-1 rounded-lg text-center"
                     >
                       Delete Chat
                     </button>
@@ -87,7 +87,7 @@ export default function savedChatPage() {
             )}
             <p className="lg:block hidden">|</p>
             <Link href={"/ai"}>
-              <button className="text-sm">BACK</button>
+              <button className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">Back</button>
             </Link>
           </div>
         </nav>
@@ -98,14 +98,14 @@ export default function savedChatPage() {
               {uniqueChat.map((m) => (
                 <div key={m.id}>
                   {m.role === "user" ? (
-                    <div className="dark:bg-neutral-900 bg-neutral-100 py-2 px-4 rounded-lg lg:flex items-start gap-5 mb-2">
+                    <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
                       <p className="min-w-[5%] lg:mb-0 mb-2">User:</p>
                       <p>{m.content}</p>
                     </div>
                   ) : (
-                    <div className="py-2 px-4 lg:flex lg:gap-5 items-start mb-2">
+                    <div className="lg:flex lg:gap-5 items-start mb-2 bg-[#ef90ff] rounded-2xl px-4 py-4 xl:py-8 text-black">
                       <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
-                      <p className="dark:text-neutral-400 text-neutral-600">
+                      <p className="text-black">
                         {m.content}
                       </p>
                     </div>

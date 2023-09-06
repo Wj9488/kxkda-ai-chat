@@ -143,7 +143,7 @@ const Ai = () => {
                     className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-100 z-10"
                   />
                   <button
-                    className="border dark:border-neutral-200 border-neutral-900 bg-neutral-900 text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-200 dark:text-[#070707] w-full lg:w-auto text-center"
+                    className="border bg-[#02ffb3] text-white mt-0 px-2 py-1 rounded-lg dark:text-[#070707] w-full lg:w-auto text-center"
                     type="submit"
                   >
                     Send
@@ -175,28 +175,28 @@ const Ai = () => {
               <span className="text-neutral-500">{session.user.name} </span>
             </p>
           )}
-          <p className="lg:block hidden">|</p>
-          <button onClick={() => signOut()} className="text-sm">
-            SIGN OUT
+          {/* <p className="lg:block hidden">|</p> */}
+          <button onClick={() => signOut()} className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">
+            Sign out
           </button>
         </div>
       </nav>
 
       <Transition>
         <main className="px-[2.5%] py-1 min-h-[92.5vh]">
-          <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div>
+          {/* <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div> */}
           <section className="mt-4 lg:mb-10 mb-[10rem]">
             {messages.map((m) => (
               <div key={m.id}>
                 {m.role === "user" ? (
-                  <div className="dark:bg-neutral-900 bg-neutral-100 py-2 px-4 rounded-lg lg:flex items-start gap-5 mb-2">
+                  <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
                     <p className="min-w-[5%] lg:mb-0 mb-2">User:</p>
                     <p>{m.content}</p>
                   </div>
                 ) : (
-                  <div className="py-2 px-4 lg:flex lg:gap-5 items-start mb-2">
+                  <div className="lg:flex lg:gap-5 items-start mb-2 bg-[#ef90ff] rounded-2xl px-4 py-4 xl:py-8 text-black">
                     <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
-                    <p className="dark:text-neutral-400 text-neutral-600">
+                    <p className="text-black">
                       {m.content}
                     </p>
                   </div>

@@ -10,7 +10,7 @@ export default function Canvas() {
     const context = canvas.getContext('2d');
 
     // Array of color options
-    const colors = ['#d90429', '#70e000', '#fb8500', '#52b788', '#ee6c4d', "#38a3a5", "#9d4edd"];
+    const colors = ['#ef90ff', '#02ffb3'];
 
     // Randomly select a color from the array
     const randomColor = colors[Math.floor(Math.random() * colors.length)];

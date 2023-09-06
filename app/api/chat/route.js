@@ -18,9 +18,9 @@ export async function POST(req) {
     stream: true,
     messages
     // messages: [
-    // { role: "system", content="how you want GPT to act, e.g pirate"}
-    // ...messages
-    //]
+    // { role: "system", content="Opening times 23:00 - 1am every tuesday"}
+    //   ...messages
+    // ]
   })
   const stream = OpenAIStream(response)
   return new StreamingTextResponse(stream)
