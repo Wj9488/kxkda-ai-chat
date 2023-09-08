@@ -59,7 +59,7 @@ export default function savedChatPage() {
                   <div className="flex items-center gap-2 mb-2 lg:mb-0">
                     <button
                       onClick={deleteChat}
-                      className="bg-[#02ffb3] text-[#070707] mt-0 px-2 py-1 rounded-lg text-center"
+                      className="bg-[#02ffb3] mt-0 px-2 py-1 rounded-lg text-black text-center"
                     >
                       Delete Chat
                     </button>
@@ -98,16 +98,20 @@ export default function savedChatPage() {
               {uniqueChat.map((m) => (
                 <div key={m.id}>
                   {m.role === "user" ? (
-                    <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
-                      <p className="min-w-[5%] lg:mb-0 mb-2">User:</p>
-                      <p>{m.content}</p>
+                    <div className="ml-[15%] w-[85%] lg:w-12/12">
+                      <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
+                        {/* <p className="min-w-[5%] lg:mb-0 mb-2">User:</p> */}
+                        <p>{m.content}</p>
+                      </div>
                     </div>
                   ) : (
-                    <div className="lg:flex lg:gap-5 items-start mb-2 bg-[#ef90ff] rounded-2xl px-4 py-4 xl:py-8 text-black">
-                      <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
-                      <p className="text-black">
-                        {m.content}
-                      </p>
+                    <div className="w-[85%] lg:w-12/12"> 
+                      <div className="lg:flex lg:gap-5 items-start mb-2 border-[#ef90ff] border dark:text-neutral-100 rounded-2xl px-4 py-4 xl:py-8 text-black">
+                        <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
+                        <p className="dark:text-neutral-100 text-black">
+                          {m.content}
+                        </p>
+                      </div>
                     </div>
                   )}
                 </div>

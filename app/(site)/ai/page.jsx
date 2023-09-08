@@ -18,7 +18,7 @@ const Ai = () => {
 
   const chatDeletedBool = searchParams.get("chatDeleted");
 
-  console.log("chat deleted?",chatDeletedBool)
+  console.log("chat deleted?", chatDeletedBool);
 
   const [menuVisibility, setMenuVisibility] = useState(false);
   const [responseStatus, setResponseStatus] = useState("");
@@ -28,18 +28,17 @@ const Ai = () => {
   useEffect(() => {
     function detectDeletedChatQueryParam() {
       if (chatDeletedBool === true) {
-        setResponseStatus("Chat Deleted")
+        setResponseStatus("Chat Deleted");
       } else {
-        setResponseStatus("")
+        setResponseStatus("");
       }
     }
-    detectDeletedChatQueryParam()
-  }, [responseStatus])
+    detectDeletedChatQueryParam();
+  }, [responseStatus]);
 
   // Setting Saved Chats List
 
   const [savedChats, setSavedChats] = useState([]);
-
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -66,10 +65,10 @@ const Ai = () => {
   const saveChat = async () => {
     if (messages.length < 1) {
       setResponseStatus("No messages to save");
-      console.log("No messages  to save")
+      console.log("No messages  to save");
       return;
     }
-  
+
     try {
       const response = await axios.post("/api/saveChat", {
         chatContent: messages,
@@ -77,12 +76,12 @@ const Ai = () => {
       });
       console.log(response.data);
       setResponseStatus("Chat saved");
-      fetchChats()
+      fetchChats();
     } catch (error) {
       console.error("An error occurred while saving the chat", error);
       setResponseStatus("Error saving chat, please try again");
     }
-  };  
+  };
 
   // Get all saved chats for a particular user from the Db
 
@@ -109,54 +108,51 @@ const Ai = () => {
 
   return (
     <>
-     <section className="fixed bottom-0 lg:right-10 lg:left-10 right-5 left-5 z-10">
-            <div
-              id="chatSection"
-              className="bg-transparent lg:p-4 p-2 rounded-lg"
-            >
-              <div className="items-center gap-2 lg:flex justify-center">
-                <div className="flex items-center gap-2 mb-2 lg:mb-0">
-                  <button
-                    onClick={() => setMenuVisibility(!menuVisibility)}
-                    className="border dark:border-neutral-700 border-neutral-300 bg-neutral-100 dark:text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-800 text-center"
-                  >
-                    {menuVisibility ? "Close" : "Menu"}
-                  </button>
-                  <button
-                    onClick={saveChat}
-                    className="border dark:border-neutral-700 border-neutral-300 bg-neutral-100 dark:text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-800 text-center"
-                  >
-                    Save Chat
-                  </button>
-                </div>
-                <form
-                  onSubmit={handleSubmit}
-                  className="lg:flex items-center gap-2 lg:min-w-[85%] min-w-[90%]"
-                >
-                  <TextareaAutosize
-                    rows={2}
-                    maxRows={4}
-                    autoFocus
-                    value={input}
-                    onChange={handleInputChange}
-                    placeholder="Write a message"
-                    className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-100 z-10"
-                  />
-                  <button
-                    className="border bg-[#02ffb3] text-white mt-0 px-2 py-1 rounded-lg dark:text-[#070707] w-full lg:w-auto text-center"
-                    type="submit"
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
+      <section className="fixed bottom-0 lg:right-10 lg:left-10 right-5 left-5 z-10">
+        <div id="chatSection" className="bg-neutral-50 dark:bg-neutral-950 lg:p-4 p-3 rounded-xl">
+          <div className="items-center gap-2 lg:flex justify-center">
+            <div className="flex items-center gap-2 mb-2 lg:mb-0">
+              <button
+                onClick={() => setMenuVisibility(!menuVisibility)}
+                className="border dark:border-neutral-700 border-neutral-300 bg-neutral-100 dark:text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-800 text-center"
+              >
+                {menuVisibility ? "Close" : "Menu"}
+              </button>
+              <button
+                onClick={saveChat}
+                className="border dark:border-neutral-700 border-neutral-300 bg-neutral-100 dark:text-white mt-0 px-2 py-1 rounded-lg dark:bg-neutral-800 text-center"
+              >
+                Save Chat
+              </button>
             </div>
-          </section>
+            <form
+              onSubmit={handleSubmit}
+              className="lg:flex items-center gap-2 lg:min-w-[85%] min-w-[90%]"
+            >
+              <TextareaAutosize
+                rows={2}
+                maxRows={4}
+                autoFocus
+                value={input}
+                onChange={handleInputChange}
+                placeholder="Write a message"
+                className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-100 z-10"
+              />
+              <button
+                className="bg-[#02ffb3] mt-0 px-2 py-1 rounded-lg dark:text-[#070707] w-full lg:w-auto text-center"
+                type="submit"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
       <nav className="border__bottom border-neutral-900 flex items-center justify-between px-[2.5%] lg:py-[.5%] py-2">
         <div>
           <Link href={"/"}>
             <p className="text-lg">
-              KXKDA {" "}
+              KXKDA{" "}
               <span className="dark:text-neutral-400 text-neutral-600 text-sm">
                 chat
               </span>
@@ -176,7 +172,10 @@ const Ai = () => {
             </p>
           )}
           {/* <p className="lg:block hidden">|</p> */}
-          <button onClick={() => signOut()} className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">
+          <button
+            onClick={() => signOut()}
+            className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg"
+          >
             Sign out
           </button>
         </div>
@@ -189,23 +188,23 @@ const Ai = () => {
             {messages.map((m) => (
               <div key={m.id}>
                 {m.role === "user" ? (
-                  <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
-                    <p className="min-w-[5%] lg:mb-0 mb-2">User:</p>
-                    <p>{m.content}</p>
+                  <div className="ml-[15%] w-[85%] lg:w-12/12">
+                    <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
+                      {/* <p className="min-w-[5%] lg:mb-0 mb-2">User:</p> */}
+                      <p>{m.content}</p>
+                    </div>
                   </div>
                 ) : (
-                  <div className="lg:flex lg:gap-5 items-start mb-2 bg-[#ef90ff] rounded-2xl px-4 py-4 xl:py-8 text-black">
-                    <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
-                    <p className="text-black">
-                      {m.content}
-                    </p>
+                  <div className="w-[85%] lg:w-12/12">
+                    <div className="lg:flex lg:gap-5 items-start mb-2 border-[#ef90ff] border dark:text-neutral-100 rounded-2xl px-4 py-4 xl:py-8 text-black">
+                      <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
+                      <p className="text-black dark:text-neutral-100">{m.content}</p>
+                    </div>
                   </div>
                 )}
               </div>
             ))}
           </section>
-
-         
         </main>
       </Transition>
 
@@ -213,7 +212,10 @@ const Ai = () => {
       <motion.section
         className="fixed lg:bottom-20 bottom-40 rounded-lg lg:right-20 lg:left-20 right-5 left-5 dark:bg-neutral-900 bg-neutral-100 min-h-[40vh] min-w-[full]"
         initial={{ opacity: 0, zIndex: -10 }} // Initial state (hidden)
-        animate={{ opacity: menuVisibility ? 1 : 0, zIndex: menuVisibility ? 10 : -10}} // Animate to visible if menuVisibility is true, else animate to hidden
+        animate={{
+          opacity: menuVisibility ? 1 : 0,
+          zIndex: menuVisibility ? 10 : -10,
+        }} // Animate to visible if menuVisibility is true, else animate to hidden
         exit={{ opacity: 0, zIndex: -10 }} // Exit state (hidden)
         transition={{ duration: 0.33 }} // Animation duration
       >
@@ -232,7 +234,7 @@ const Ai = () => {
               // Check if the question length is greater than 60 characters
               const question =
                 rawQuestion && rawQuestion.length > 60
-                  ? rawQuestion.substring(0, 60) + " ..."
+                  ? rawQuestion.substring(0, 60) + "..."
                   : rawQuestion;
 
               return (
