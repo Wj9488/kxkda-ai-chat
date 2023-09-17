@@ -10,16 +10,17 @@ export default function Canvas() {
     const context = canvas.getContext('2d');
 
     // Array of color options
-    const colors = ['#ef90ff', '#02ffb3'];
+    const colors = ['#650605'];
 
     // Randomly select a color from the array
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight * 0.935;
+    canvas.width = 400;
+    canvas.height = 200;
 
     if(window.innerWidth < 800 ) {
-        canvas.height = window.innerHeight * 0.925;
+        canvas.height = 150;
+        canvas.width = window.innerWidth * 0.9;
     }
 
     const letters = [ ":",'.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.'];
@@ -50,8 +51,8 @@ export default function Canvas() {
   }, []);
 
   return ( 
-    <div className='mt-1'>
-        <canvas ref={canvasRef} /> 
+    <div className='mt-1 flex items-center justify-center'>
+        <canvas className='' ref={canvasRef} /> 
     </div>
   );
 }

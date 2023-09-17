@@ -58,7 +58,7 @@ export default function Register() {
         </div>
         <div className="flex items-center justify-around gap-5">
           <Link href={"/login"}>
-            <button className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">Login</button>
+            <button className="text-sm text-[#070707] py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded">Login</button>
           </Link>
         </div>
       </nav>
@@ -73,7 +73,7 @@ export default function Register() {
                   <input
                     type="text"
                     placeholder="John Smith"
-                    className="dark:bg-transparent p-2 rounded-2xl border border-neutral-900 mb-2 dark:border-neutral-200 w-full"
+                    className="dark:bg-transparent px-2 py-1 rounded border border-neutral-900 mb-2 dark:border-neutral-200 w-full"
                     value={data.name}
                     onChange={(e) => {
                       setData({ ...data, name: e.target.value });
@@ -85,7 +85,7 @@ export default function Register() {
                   <input
                     type="email"
                     placeholder="email@example.com"
-                    className="dark:bg-transparent p-2 rounded-2xl border border-neutral-900 mb-2 dark:border-neutral-200 w-full"
+                    className="dark:bg-transparent px-2 py-1 rounded border border-neutral-900 mb-2 dark:border-neutral-200 w-full"
                     value={data.email}
                     onChange={(e) => {
                       setData({ ...data, email: e.target.value });
@@ -106,7 +106,7 @@ export default function Register() {
                   <input
                     type={passwordInputType}
                     placeholder="password"
-                    className="dark:bg-transparent p-2 rounded-2xl border border-neutral-900 dark:border-neutral-200 w-full"
+                    className="dark:bg-transparent px-2 py-1 rounded border border-neutral-900 dark:border-neutral-200 w-full"
                     value={data.password}
                     onChange={(e) =>
                       setData({ ...data, password: e.target.value })
@@ -115,7 +115,7 @@ export default function Register() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-[#02ffb3] mt-4 px-2 py-2 rounded-2xl text-[#070707] w-full text-center"
+                  className="mt-4 px-2 py-1 dark:text-neutral-300 bg-[transparent] border border-[#650605] rounded w-full text-center"
                 >
                   Sign Up
                 </button>
@@ -126,7 +126,7 @@ export default function Register() {
                 </div>
                 <Link href={"/login?googleOnboarding=true"}>
                   <button
-                    className="bg-neutral-900 text-white mt-2 px-2 py-1 rounded-2xl dark:bg-neutral-200 dark:text-[#070707] mb-2 w-full text-center"
+                    className="mt-2 py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded mb-2 w-full text-center"
                   >
                     Continue With Google
                   </button>

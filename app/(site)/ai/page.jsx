@@ -139,7 +139,7 @@ const Ai = () => {
                 className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-100 z-10"
               />
               <button
-                className="bg-[#02ffb3] mt-0 px-2 py-1 rounded-lg dark:text-[#070707] w-full lg:w-auto text-center"
+                className="border border-[#650605] dark:text-neutral-300 mt-0 px-2 py-1 rounded w-full lg:w-auto text-center"
                 type="submit"
               >
                 Send
@@ -174,7 +174,7 @@ const Ai = () => {
           {/* <p className="lg:block hidden">|</p> */}
           <button
             onClick={() => signOut()}
-            className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg"
+            className="text-sm text-[#070707] py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded"
           >
             Sign out
           </button>
@@ -189,14 +189,14 @@ const Ai = () => {
               <div key={m.id}>
                 {m.role === "user" ? (
                   <div className="ml-[15%] w-[85%] lg:w-12/12">
-                    <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
+                    <div className="border border-neutral-300 dark:border-neutral-700 dark:text-neutral-300 px-4 py-3 rounded lg:flex items-start gap-5 mb-2">
                       {/* <p className="min-w-[5%] lg:mb-0 mb-2">User:</p> */}
                       <p>{m.content}</p>
                     </div>
                   </div>
                 ) : (
                   <div className="w-[85%] lg:w-12/12">
-                    <div className="lg:flex lg:gap-5 items-start mb-2 border-[#ef90ff] border dark:text-neutral-100 rounded-2xl px-4 py-4 xl:py-8 text-black">
+                    <div className="lg:flex lg:gap-5 items-start mb-2 border-[#650605] border dark:text-neutral-100 rounded px-4 py-3 text-black">
                       <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
                       <p className="text-black dark:text-neutral-100">{m.content}</p>
                     </div>

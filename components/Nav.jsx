@@ -28,13 +28,13 @@ const Nav = () => {
       </div>
       <div className="flex items-center justify-around gap-5">
         <Link href={"/sign-up"}>
-        <button className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">
+        <button className="text-sm text-[#070707] py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded">
           Sign Up
         </button>
         </Link>
         <p>|</p>
         <Link href={"/login"}>
-        <button className="text-sm text-[#070707] py-1 px-2 bg-[#02ffb3] rounded-lg">
+        <button className="text-sm py-1 px-2 dark:text-neutral-300 bg-[transparent] border border-[#650605] rounded">
           Login
         </button>
         </Link>

@@ -55,11 +55,11 @@ export default function savedChatPage() {
                 id="chatSection"
                 className="bg-transparent lg:p-4 p-2 rounded-lg"
               >
-                <div className="items-center gap-2 lg:flex justify-center">
+                <div className="items-center gap-2 lg:flex justify-center bg-neutral-50 dark:bg-neutral-950 lg:p-4 p-3 rounded-xl">
                   <div className="flex items-center gap-2 mb-2 lg:mb-0">
                     <button
                       onClick={deleteChat}
-                      className="bg-[#02ffb3] mt-0 px-2 py-1 rounded-lg text-black text-center"
+                      className="text-sm text-[#070707] py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded"
                     >
                       Delete Chat
                     </button>
@@ -87,27 +87,27 @@ export default function savedChatPage() {
             )}
             <p className="lg:block hidden">|</p>
             <Link href={"/ai"}>
-              <button className="text-sm text-[#070707] py-1 px-2 bg-[#ef90ff] rounded-lg">Back</button>
+              <button className="text-sm text-[#070707] py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded">Back</button>
             </Link>
           </div>
         </nav>
         <Transition>
           <main className="px-[2.5%] py-1 min-h-[92.5vh]">
-            <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div>
+            {/* <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div> */}
             <section className="mt-4 lg:mb-10 mb-[5rem]">
               {uniqueChat.map((m) => (
                 <div key={m.id}>
                   {m.role === "user" ? (
                     <div className="ml-[15%] w-[85%] lg:w-12/12">
-                      <div className="dark:bg-[#fafafa] bg-[#edede9] text-[#070707] p-4 rounded-2xl lg:flex items-start gap-5 mb-2">
+                      <div className="border border-neutral-300 dark:border-neutral-700 dark:text-neutral-300 px-4 py-3 rounded lg:flex items-start gap-5 mb-2">
                         {/* <p className="min-w-[5%] lg:mb-0 mb-2">User:</p> */}
                         <p>{m.content}</p>
                       </div>
                     </div>
                   ) : (
                     <div className="w-[85%] lg:w-12/12"> 
-                      <div className="lg:flex lg:gap-5 items-start mb-2 border-[#ef90ff] border dark:text-neutral-100 rounded-2xl px-4 py-4 xl:py-8 text-black">
-                        <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
+                      <div className="lg:flex lg:gap-5 items-start mb-2 border-[#650605] border dark:text-neutral-100 rounded px-4 py-3 text-black">
+                        <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT:</p>
                         <p className="dark:text-neutral-100 text-black">
                           {m.content}
                         </p>
