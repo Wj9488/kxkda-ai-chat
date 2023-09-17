@@ -20,7 +20,7 @@ const Nav = () => {
   // }, [darkMode]);
   
   return (
-    <nav className='border__bottom border-neutral-900 flex items-center justify-between px-[2.5%] lg:py-[.5%] py-2'>
+    <nav className='border__bottom border-neutral-900 flex items-center justify-between gap-20 px-[2.5%] lg:py-[.5%] py-2'>
       <div>
         <Link href={"/"}>
           <p className="text-lg">KXKDA {" "}<span className="dark:text-neutral-400 text-neutral-600 text-sm">chat</span></p>
