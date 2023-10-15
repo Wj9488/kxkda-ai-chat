@@ -139,7 +139,7 @@ const Ai = () => {
                 className="px-2 py-1 rounded-lg border dark:border-neutral-700 border-neutral-300 w-full dark:bg-neutral-900 bg-neutral-100 z-10"
               />
               <button
-                className="border border-[#650605] dark:text-neutral-300 mt-0 px-2 py-1 rounded w-full lg:w-auto text-center"
+                className="bg-[#3842F5] text-white border border-[#3842F5] dark:text-neutral-300 mt-0 px-2 py-1 rounded w-full lg:w-auto text-center"
                 type="submit"
               >
                 Send

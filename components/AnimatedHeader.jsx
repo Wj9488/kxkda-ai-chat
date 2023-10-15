@@ -25,7 +25,7 @@ const AnimatedHeader = () => {
   };
 
   return (
-    <header className="flex items-center justify-center min-h-[85vh] lg:min-h-[82dvh] 2xl:min-h-[85dvh]">
+    <header className="flex items-center justify-center min-h-[70vh] lg:min-h-[82dvh] 2xl:min-h-[85dvh]">
       <div className="relative overflow-hidden block">
         <motion.h1
           variants={mainHeaderAnimation}
