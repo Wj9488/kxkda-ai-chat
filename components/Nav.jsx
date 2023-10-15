@@ -20,7 +20,7 @@ const Nav = () => {
   // }, [darkMode]);
   
   return (
-    <nav className='border__bottom border-neutral-900 flex items-center justify-between gap-20 px-[2.5%] lg:py-[.5%] py-2'>
+    <nav className='border__bottom border-neutral-900 flex items-center justify-between gap-20 px-[2.5%] lg:py-[1%] py-2'>
       <div>
         <Link href={"/"}>
           <p className="text-lg">KXKDA {" "}<span className="dark:text-neutral-400 text-neutral-600 text-sm">chat</span></p>
@@ -34,7 +34,7 @@ const Nav = () => {
         </Link>
         <p>|</p>
         <Link href={"/login"}>
-        <button className="text-sm py-1 px-2 dark:text-neutral-300 bg-[transparent] border border-[#650605] rounded">
+        <button className="text-sm py-1 px-2 dark:text-neutral-300 bg-[#3842F5] text-white border border-[#3842F5] rounded">
           Login
         </button>
         </Link>

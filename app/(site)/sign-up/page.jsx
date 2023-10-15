@@ -115,7 +115,7 @@ export default function Register() {
                 </div>
                 <button
                   type="submit"
-                  className="mt-4 px-2 py-1 dark:text-neutral-300 bg-[transparent] border border-[#650605] rounded w-full text-center"
+                  className="mt-4 px-2 py-1 dark:text-neutral-300 bg-[#3842F5] border border-[#3842F5] text-white rounded w-full text-center"
                 >
                   Sign Up
                 </button>
