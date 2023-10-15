@@ -196,7 +196,7 @@ const Ai = () => {
                   </div>
                 ) : (
                   <div className="w-[85%] lg:w-12/12">
-                    <div className="lg:flex lg:gap-5 items-start mb-2 border-[#650605] border dark:text-neutral-100 rounded px-4 py-3 text-black">
+                    <div className="lg:flex lg:gap-5 items-start mb-2 border-[#3842F5] border dark:text-neutral-100 rounded px-4 py-3 text-black">
                       <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT-3.5:</p>
                       <p className="text-black dark:text-neutral-100">{m.content}</p>
                     </div>
