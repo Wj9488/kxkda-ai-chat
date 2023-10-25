@@ -6,6 +6,15 @@
   display: none;
 }
 
+.text__msg_border_style {
+  border-radius: 15px;
+  border-bottom-right-radius: 5px;
+}
+.text__msg_border_style_chat {
+  border-radius: 15px;
+  border-bottom-left-radius: 5px;
+}
+
 .ai__grid {
   display: grid;
   grid-template-rows: 1fr;

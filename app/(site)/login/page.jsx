@@ -47,12 +47,18 @@ export default function Login() {
   const loginUser = async (e) => {
     e.preventDefault();
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
-      if (callback?.error) {
+      if (callback?.error === "Incorrect password" || callback?.error === "Please enter an email and password") {
         // toast.error(callback.error);
+        console.log(`Error: ${callback.error}`)
+        setLoginStatus(callback?.error);
+      } 
+      if(callback?.error === "No user found") {
+        setLoginStatus("Invalid email or password");
+      }
+      else {
         console.log(`Error: ${callback.error}`)
         setLoginStatus("Unexpected error, please try again.");
       }
-
       if (callback?.ok && !callback?.error) {
         // toast.success("Logged in!");
         setLoginStatus("Success");

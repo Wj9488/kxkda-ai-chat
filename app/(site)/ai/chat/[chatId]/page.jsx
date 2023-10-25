@@ -56,7 +56,7 @@ export default function savedChatPage() {
                 className="bg-transparent lg:p-4 p-2 rounded-lg"
               >
                 <div className="items-center gap-2 lg:flex justify-center bg-neutral-50 dark:bg-neutral-950 lg:p-4 p-3 rounded-xl">
-                  <div className="flex items-center gap-2 mb-2 lg:mb-0">
+                  <div className="flex items-center gap-2 lg:mb-0">
                     <button
                       onClick={deleteChat}
                       className="text-sm text-[#070707] py-1 px-2 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded"
@@ -92,26 +92,27 @@ export default function savedChatPage() {
           </div>
         </nav>
         <Transition>
-          <main className="px-[2.5%] py-1 min-h-[92.5vh]">
+          <main className="px-[2.5%] py-1 min-h-[92.5vh] lg:w-[45%] mx-auto">
             {/* <div className="w-full min-h-[1px] dark:bg-[#fafafa] bg-[#070707] lg:mt-2"></div> */}
             <section className="mt-4 lg:mb-10 mb-[5rem]">
               {uniqueChat.map((m) => (
                 <div key={m.id}>
                   {m.role === "user" ? (
                     <div className="ml-[15%] w-[85%] lg:w-12/12">
-                      <div className="border border-neutral-300 dark:border-neutral-700 dark:text-neutral-300 px-4 py-3 rounded lg:flex items-start gap-5 mb-2">
+                      <div className="my-4 text__msg_border_style text-sm text-[#070707] py-3 px-4 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded">
                         {/* <p className="min-w-[5%] lg:mb-0 mb-2">User:</p> */}
                         <p>{m.content}</p>
                       </div>
                     </div>
                   ) : (
                     <div className="w-[85%] lg:w-12/12"> 
-                      <div className="lg:flex lg:gap-5 items-start mb-2 border-[#3842F5] border dark:text-neutral-100 rounded px-4 py-3 text-black">
-                        <p className="lg:min-w-[5%] lg:mb-0 mb-2">GPT:</p>
-                        <p className="dark:text-neutral-100 text-black">
+                      <div className="my-4 text__msg_border_style_chat text-sm py-3 px-4 text-neutral-300 border-[#3842F5] bg-[#3842f5] dark:bg-[#3842f580] border dark:border-neutral-700 rounded">
+                        <p className="lg:min-w-[5%] lg:mb-0 mb-2">AI:</p>
+                        <p className="text-neutral-300">
                           {m.content}
                         </p>
                       </div>
+                      
                     </div>
                   )}
                 </div>
