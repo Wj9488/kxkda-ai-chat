@@ -99,14 +99,14 @@ export default function savedChatPage() {
                 <div key={m.id}>
                   {m.role === "user" ? (
                     <div className="ml-[15%] w-[85%] lg:w-12/12">
-                      <div className="my-4 text__msg_border_style text-sm text-[#070707] py-3 px-4 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded">
+                      <div className="my-4 text__msg_border_style text-sm lg:text-base text-[#070707] py-3 px-4 dark:text-neutral-300 bg-neutral-100 border-neutral-200 dark:bg-neutral-900 border dark:border-neutral-700 rounded">
                         {/* <p className="min-w-[5%] lg:mb-0 mb-2">User:</p> */}
                         <p>{m.content}</p>
                       </div>
                     </div>
                   ) : (
                     <div className="w-[85%] lg:w-12/12"> 
-                      <div className="my-4 text__msg_border_style_chat text-sm py-3 px-4 text-neutral-300 border-[#3842F5] bg-[#3842f5] dark:bg-[#3842f580] border dark:border-neutral-700 rounded">
+                      <div className="my-4 text__msg_border_style_chat text-sm lg:text-base py-3 px-4 text-neutral-300 border-[#3842F5] bg-[#3842f5] dark:bg-[#3842f580] border dark:border-neutral-700 rounded">
                         <p className="lg:min-w-[5%] lg:mb-0 mb-2">AI:</p>
                         <p className="text-neutral-300">
                           {m.content}
